@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"json:target/cucumber-repor/cucumber.json"},
-        tags ="not @to-do"
+        tags = {"not @to-do","@high-impact"}
         //glue ="path to Stepdefs if not in the same folder",
         //features ="path to features if not in co.uk.safebear folder"
 )
