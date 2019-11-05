@@ -16,7 +16,7 @@ public class Driver {
     private static final String BROWSER = System.getProperty("browser", "chrome");
 
 
-    public static String getUr() {
+    public static String getUrl() {
         //getter method to return URL
         return URL;
     }
