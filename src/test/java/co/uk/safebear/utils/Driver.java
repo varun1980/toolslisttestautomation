@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class Driver {
 
@@ -47,6 +48,16 @@ public class Driver {
 
                 //Return our Driver
                 return new FirefoxDriver();
+
+            case "IE":
+                //Tell the user which browser we're running our tests on
+                System.out.println("Executing on IE");
+
+                //Use 'WebDriverManager' to setup our IEDriver
+                WebDriverManager.iedriver().setup();
+
+                //Return our Driver
+                return new InternetExplorerDriver();
 
 
             default:
