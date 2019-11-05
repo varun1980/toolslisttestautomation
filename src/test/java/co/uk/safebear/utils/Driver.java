@@ -11,7 +11,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 public class Driver {
 
     // variable that stores the URL
-    private static final String URL = System.getProperty("url", "http://toolslist.safebear.co.uk:8080");
+    private static final String URL = System.getProperty("url", "https://driver.lexautolease.co.uk/Account/Login?ReturnUrl=%2f");
     // variable that stores the Browser
     private static final String BROWSER = System.getProperty("browser", "chrome");
 
