@@ -28,7 +28,7 @@ public class Driver {
         switch (BROWSER.toUpperCase()) {
 
             case "CHROME":
-                ;
+
 
                 //Tell the user which browser we're running our tests on
                 System.out.println("Executing on CHROME");
@@ -38,6 +38,30 @@ public class Driver {
 
                 //Return our Driver
                 return new ChromeDriver();
+
+            case "CHROME_HEADLESS":
+
+
+                //Tell the user which browser we're running our tests on
+                System.out.println("Executing on CHROME HEADLESS");
+
+                chromeOptions = new ChromeOptions();
+
+                //Set Chrome to run headlessley
+                chromeOptions.addArguments("headless");
+
+                //Make sure the window size is large and maximised
+                //So nothing disappears off screeb
+                // (even in headless mode!)
+                //Use 'WebDriverManager' to setup our chromedriver
+                chromeOptions.addArguments("window-size=1920,1080");
+                chromeOptions.addArguments("start-maximized");
+
+                //Set up our ChromeDriver
+                WebDriverManager.chromedriver().setup();
+
+                //Return our Driver
+                return new ChromeDriver(chromeOptions);
 
             case "FIREFOX":
                 //Tell the user which browser we're running our tests on
