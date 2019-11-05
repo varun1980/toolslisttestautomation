@@ -8,8 +8,9 @@ Feature: Login as a valid driver
   *The user must be a valid Driver
   *The user must have a valid car order
 
+  @high-impact
   Scenario Outline: As a valid driver the user is able to login
-    When The driver enters username "<username>" and passwrod "<password>"
+    When The driver enters username "<username>" and password "<password>"
     Then The driver is successfully logged in
     Examples:
       | username  | password    |
