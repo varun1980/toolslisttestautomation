@@ -1,5 +1,7 @@
 package co.uk.safebear;
 
+import co.uk.safebear.pages.LoginPage;
+import co.uk.safebear.pages.ToolsPage;
 import co.uk.safebear.utils.Driver;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -13,6 +15,9 @@ import static org.junit.Assert.*;
 public class Stepdefs {
 
     WebDriver browser;
+    LoginPage loginPage;
+    ToolsPage toolsPage;
+
 
     @Before
     public void setUp(){
@@ -20,6 +25,8 @@ public class Stepdefs {
         browser = Driver.getDriver();
         //Navigate to the URL of our webpage
         browser.get(Driver.getUrl());
+    loginPage = new LoginPage(browser);
+    toolsPage = new ToolsPage(browser);
     }
 
     @After
@@ -34,8 +41,8 @@ public class Stepdefs {
 
     @Given("I am logged out")
     public void i_am_logged_out() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new cucumber.api.PendingException();
+  //Asert that we're on the 'login page'
+        assertEquals("We're not on the Login Page", "Login Page",loginPage.getPageTitle());
     }
 
     @When("I enter username {string} and password {string}")
