@@ -17,10 +17,10 @@ Feature: Login
     When I enter username "<username>" and password "<password>"
     Then the user is informed that the login is successful
     Examples:
-      |username|Password|
+      |username|password|
       |tester  |letmein |
       |tester1 |letmein |
-      |teseter2|letmein |
+      |tester2 |letmein |
 
     @to-do
     Scenario: an invalid user attempts to log in
