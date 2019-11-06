@@ -16,19 +16,19 @@ public class Driver {
     private static final String BROWSER = System.getProperty("browser", "chrome");
 
 
-    public static String getUr() {
+    public static String getUrl() {
         //getter method to return URL
         return URL;
     }
 
     public static WebDriver getDriver() {
 
-        ChromeOptions chromeOptions;
+        ChromeOptions chromeOptions = new ChromeOptions();
 
         switch (BROWSER.toUpperCase()) {
 
             case "CHROME":
-                ;
+
 
                 //Tell the user which browser we're running our tests on
                 System.out.println("Executing on CHROME");
@@ -38,6 +38,20 @@ public class Driver {
 
                 //Return our Driver
                 return new ChromeDriver();
+
+            case "CHROME_HEADLESS":
+
+
+                //Tell the user which browser we're running our tests on
+                System.out.println("Executing on CHROME_HEADLESS");
+
+                //Use 'WebDriverManager' to setup our chromedriver
+                WebDriverManager.chromedriver().setup();
+
+                chromeOptions.setHeadless(true);
+
+                //Return our Driver
+                return new ChromeDriver(chromeOptions);
 
             case "FIREFOX":
                 //Tell the user which browser we're running our tests on
