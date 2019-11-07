@@ -43,4 +43,20 @@ public class LoginTest {
 
         Assert.assertEquals("Login Successful",toolspage.checkForSuccessfulLoginMessage());
     }
+
+
+
+    @Test
+    public void unsuccessfulLoginTest(){
+
+        Assert.assertEquals("Login Page",loginPage.getPageTitle());
+
+        loginPage.enterUsername("wer");
+        loginPage.enterPassword("sd");
+        loginPage.clickSubmitButton();
+
+        Assert.assertEquals("WARNING: Username or Password is incorrect",loginPage.checkForFailedLoginMessage());
+    }
+
+
 }
